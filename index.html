@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shadab Ahmed - Technical CV website." />
+  <meta name="theme-color" content="#07090d" />
+  <title>Shadab</title>
+  <link rel="icon" type="image/svg+xml" href="icons/favicon-laptop.svg" />
+  <link rel="shortcut icon" href="icons/favicon-laptop.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="top-nav" id="site-nav">
+      <a class="brand-pill" href="#top" aria-label="Go to top">SHADAB</a>
+
+      <nav class="nav-pill" aria-label="Main sections">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="top-actions">
+        <a class="icon-btn download-icon-btn" href="cv/shadab_ahmed_cv.pdf" download="shadab_ahmed_cv.pdf" aria-label="Download CV PDF" title="Download CV PDF" data-tooltip="Download CV">
+          <img class="download-nav-icon" src="icons/icons8-pdf-64.png" alt="" />
+        </a>
+
+        <button class="icon-btn theme-icon-btn" id="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 2.8v2.4M12 18.8v2.4M21.2 12h-2.4M5.2 12H2.8M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7M18.4 18.4l-1.7-1.7M7.3 7.3L5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.1 14.5A8.6 8.6 0 0 1 9.5 3.9a8.7 8.7 0 1 0 10.6 10.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="bento-main" id="top">
+      <section class="bento-grid" aria-label="CV Bento Grid">
+        <figure class="hero-photo-tile">
+          <img src="profile-cropped.jpg" alt="Portrait of Shadab Ahmed" loading="eager" />
+        </figure>
+
+        <article class="hero-intro-tile">
+          <h1>Hi &#128075; I'm Shadab</h1>
+          <p class="intro-text">
+            Data engineer @ SEB building data systems for Financial Crime Prevention. I develop and scale data pipelines for
+            transaction monitoring, ensuring high-quality, reliable data for downstream consumption.
+          </p>
+          <p class="intro-text">
+            I work across cloud and on-prem environments, negotiate with schemas daily, and tend to question anything that
+            works on the <br/> first try. This is a small glimpse into how I think and work as I <br/> continue to grow in the data engineering space.
+          </p>
+
+          <div class="hero-cta-row">
+            <a class="btn ghost" href="mailto:shadaba@kth.se">Get in Touch</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/shadab-ahmed-929481183/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="card bento-card about-tile" id="about">
+          <p class="tile-head">About</p>
+          <h2 class="about-gradient-title">Data-minded, simplicity-driven, curious by default.</h2>
+          <p>
+            I like building systems that are boring in the best way: stable, readable, and dependable when things get unpredictable.
+          </p>
+        </article>
+
+        <article class="card bento-card focus-tile" id="focus">
+          <p class="tile-head">Technical Focus</p>
+          <ul class="compact-list">
+            <li>Data pipeline engineering</li>
+            <li>Cloud data infrastructure and platform services</li>
+            <li>Batch orchestration and monitoring</li>
+            <li>Efficient data processing and transformations</li>
+          </ul>
+        </article>
+
+        <div class="stack-roadmap-rail">
+          <article class="card bento-card stack-tile">
+            <p class="tile-head">Working Style</p>
+            <div class="pill-list">
+              <span>Simplicity over cleverness</span>
+              <span>Automate repetitive pain</span>
+              <span>Detect early, reduce surprises later</span>
+              <span>Ship, observe, improve</span>
+              <span>Own outcomes, not only tasks</span>
+              <span>Treat documentation as a habit</span>
+            </div>
+          </article>
+        </div>
+
+        <article class="card bento-card skills-tile" id="skills">
+          <p class="tile-head">Skills &amp; Tools</p>
+          <div class="skills-groups" aria-label="Technical tools and platforms by category">
+            <p class="skills-intro" style="font-size: 0.92rem;">A practical toolkit I use today to design, build, and run scalable data systems</p>
+
+            <section class="skill-group-card skills-card-languages">
+              <p class="skill-group-title">Languages</p>
+              <div class="group-icons">
+                <span class="tool-node tool-python" role="img" aria-label="Python"><img src="icons/icons8-python-48.png" alt="" /><em>Python</em></span>
+                <span class="tool-node tool-java" role="img" aria-label="Java"><img src="icons/icons8-java.svg" alt="" /><em>Java</em></span>
+                <span class="tool-node tool-scala" role="img" aria-label="Scala"><img src="https://cdn.simpleicons.org/scala" alt="" /><em>Scala</em></span>
+                <span class="tool-node tool-database" role="img" aria-label="SQL"><img src="icons/database.svg" alt="" /><em>SQL</em></span>
+              </div>
+            </section>
+
+            <section class="skill-group-card skills-card-data">
+              <p class="skill-group-title">Data &amp; Streaming</p>
+              <div class="group-icons">
+                <span class="tool-node tool-hadoop" role="img" aria-label="Apache Hadoop"><img src="https://cdn.simpleicons.org/apachehadoop/4285F4" alt="" /><em>Hadoop</em></span>
+                <span class="tool-node tool-kafka" role="img" aria-label="Apache Kafka"><img src="https://cdn.simpleicons.org/apachekafka" alt="" /><em>Kafka</em></span>
+                <span class="tool-node tool-spark" role="img" aria-label="Apache Spark"><img src="icons/icons8-apache-spark-48.png" alt="" /><em>Spark</em></span>
+                <span class="tool-node tool-hazelcast" role="img" aria-label="Hazelcast"><img src="icons/hazelcast.png" alt="" /><em>Hazelcast</em></span>
+                <span class="tool-node tool-mysql" role="img" aria-label="MySQL"><img src="icons/icons8-mysql-48.png" alt="" /><em>MySQL</em></span>
+                <span class="tool-node tool-nifi" role="img" aria-label="Apache NiFi"><img src="https://cdn.simpleicons.org/apachenifi" alt="" /><em>NiFi</em></span>
+                <span class="tool-node tool-kibana" role="img" aria-label="Kibana"><img src="icons/icons8-kibana.svg" alt="" /><em>Kibana</em></span>
+              </div>
+            </section>
+
+            <section class="skill-group-card skills-card-cloud">
+              <p class="skill-group-title">Google Cloud</p>
+              <div class="group-icons">
+                <span class="tool-node tool-bigquery" role="img" aria-label="BigQuery"><img src="https://cdn.simpleicons.org/googlebigquery" alt="" /><em>BigQuery</em></span>
+                <span class="tool-node tool-bigtable" role="img" aria-label="Bigtable"><img src="icons/gcp/Bigtable.svg" alt="" /><em>Bigtable</em></span>
+                <span class="tool-node tool-storage" role="img" aria-label="Cloud Storage"><img src="https://cdn.simpleicons.org/googlecloudstorage" alt="" /><em>Storage</em></span>
+                <span class="tool-node tool-cloudrun" role="img" aria-label="Cloud Run"><img src="icons/gcp/Cloud%20Run.svg" alt="" /><em>Cloud Run</em></span>
+                <span class="tool-node tool-pubsub" role="img" aria-label="Pub/Sub"><img src="icons/gcp/PubSub.svg" alt="" /><em>Pub/Sub</em></span>
+                <span class="tool-node tool-cloudshell" role="img" aria-label="Cloud Shell"><img src="icons/gcp/Cloud%20Shell.svg" alt="" /><em>Cloud Shell</em></span>
+                <span class="tool-node tool-dataproc" role="img" aria-label="Dataproc"><img src="icons/gcp/Dataproc.svg" alt="" /><em>Dataproc</em></span>
+                <span class="tool-node tool-gke" role="img" aria-label="Google Kubernetes Engine"><img src="icons/gcp/Google%20Kubernetes%20Engine.svg" alt="" /><em>GKE</em></span>
+                <span class="tool-node tool-security" role="img" aria-label="Google Cloud Security"><img src="icons/gcp/Security.svg" alt="" /><em>Security</em></span>
+                <span class="tool-node tool-iam" role="img" aria-label="Identity and Access Management"><img src="icons/gcp/Identity%20And%20Access%20Management.svg" alt="" /><em>IAM</em></span>
+              </div>
+            </section>
+
+            <section class="skill-group-card skills-card-platform">
+              <p class="skill-group-title">Orchestration &amp; Platform</p>
+              <div class="group-icons">
+                <span class="tool-node tool-airflow" role="img" aria-label="Apache Airflow"><img src="icons/icons8-apache-airflow-48.png" alt="" /><em>Airflow</em></span>
+                <span class="tool-node" role="img" aria-label="Docker"><img src="https://cdn.simpleicons.org/docker" alt="" /><em>Docker</em></span>
+                <span class="tool-node" role="img" aria-label="Terraform"><img src="https://cdn.simpleicons.org/terraform" alt="" /><em>Terraform</em></span>
+                <span class="tool-node" role="img" aria-label="Red Hat"><img src="https://cdn.simpleicons.org/redhat" alt="" /><em>Red Hat</em></span>
+                <span class="tool-node tool-git" role="img" aria-label="Git"><img src="https://cdn.simpleicons.org/git" alt="" /><em>Git</em></span>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <div class="now-roadmap-rail">
+          <article class="card bento-card now-tile">
+            <p class="tile-head">Now</p>
+            <p class="now-line">Currently focused on improving how data is processed, structured, and delivered from ingestion to consumption.</p>
+            <div class="pill-list">
+              <span>Cloud Journey</span>
+              <span>On-Prem Platform</span>
+              <span>Platform Reliability</span>
+              <span>CI/CD Automation</span>
+              <span>Data Quality</span>
+              <span>Monitoring</span>
+            </div>
+          </article>
+
+          <article class="card bento-card roadmap-tile" aria-label="Ambition roadmap">
+            <p class="tile-head">Roadmap</p>
+            <ul class="roadmap-list">
+              <li class="roadmap-item">
+                <span class="roadmap-marker">01</span>
+                <div class="roadmap-item-body">
+                  <p class="roadmap-stage">Foundation</p>
+                  <h3>Cloud-Native Data Foundations</h3>
+                  <p>Deepen GCP-first data engineering with a focus on data modeling and scalable data workflows.</p>
+                </div>
+              </li>
+              <li class="roadmap-item">
+                <span class="roadmap-marker">02</span>
+                <div class="roadmap-item-body">
+                  <p class="roadmap-stage">Ownership</p>
+                  <h3>Data Platform Ownership</h3>
+                  <p>Drive reusable standards, observability, and self-service patterns that scale.</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <section class="career-grid" aria-label="Experience and education">
+          <article class="card bento-card experience-tile" id="experience">
+            <p class="tile-head">Experience</p>
+            <div class="experience-list">
+              <section class="experience-seb-block">
+                <header class="experience-company-head">
+                  <img class="experience-logo" src="logos/seb_logo.jpeg" alt="SEB logo" />
+                  <div>
+                    <h3>SEB</h3>
+                    <p>2 yrs 8 mos</p>
+                  </div>
+                </header>
+
+                <div class="experience-role-stack">
+                  <article class="experience-role">
+                    <h4>Data Engineer</h4>
+                    <p class="experience-role-date">Mar 2024 - Present · 2 yrs 2 mos</p>
+                    <p class="experience-role-team">Financial Crime Prevention</p>
+                  </article>
+
+                  <article class="experience-role">
+                    <h4>Tech Trainee</h4>
+                    <p class="experience-role-date">Sep 2023 - Feb 2024 · 6 mos</p>
+                    <p class="experience-role-program">Tech Programme</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="experience-row">
+                <img class="experience-logo" src="logos/visma_logo.jpeg" alt="Visma logo" />
+                <div class="experience-row-content">
+                  <h3>Support Agent</h3>
+                  <p class="experience-org">Visma · Part-time</p>
+                  <p class="experience-role-date">Apr 2017 - Aug 2023 · 6 yrs 5 mos</p>
+                </div>
+              </section>
+
+              <section class="experience-row">
+                <img class="experience-logo" src="logos/ibm_logo.jpeg" alt="IBM logo" />
+                <div class="experience-row-content">
+                  <h3>Master Thesis Student</h3>
+                  <p class="experience-org">IBM</p>
+                  <p class="experience-role-date">Jan 2023 - Jun 2023 · 6 mos</p>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article class="card bento-card education-tile">
+            <p class="tile-head">Education</p>
+            <div class="education-list">
+              <section class="education-row">
+                <img class="education-logo" src="kth_logo.jpeg" alt="KTH logo" />
+                <div class="education-row-content">
+                  <h3>KTH Royal Institute of Technology</h3>
+                  <p class="education-degree">Master&apos;s degree, Industrial Management</p>
+                  <p class="education-date">2023</p>
+                </div>
+              </section>
+
+              <section class="education-row">
+                <img class="education-logo" src="kth_logo.jpeg" alt="KTH logo" />
+                <div class="education-row-content">
+                  <h3>KTH Royal Institute of Technology</h3>
+                  <p class="education-degree">Civilingenj&ouml;rsexamen, Informationsteknik</p>
+                  <p class="education-date">2023</p>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article class="card bento-card publications-tile" id="publications">
+            <p class="tile-head">Publications</p>
+            <div class="publication-feature">
+              <div class="publication-copy">
+                <h3 class="publication-title">The Transition Towards Net-Zero<br />Emissions: Implications for Banks <br/> and Their IT Strategies</h3>
+                <p class="publication-meta">DiVA · Jun 15, 2023</p>
+              </div>
+              <a class="publication-link" href="https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1768208&dswid=-8555" target="_blank" rel="noopener noreferrer" aria-label="Open publication">
+                <span>Show publication</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M10 14 19 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                  <path d="M19 13v5a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section class="impact-grid" aria-label="Work highlights and profile details">
+          <article class="card bento-card special-work-tile" id="highlights">
+            <p class="tile-head">Work Highlights</p>
+            <h2 class="special-work-heading">A few contributions I&rsquo;m quietly proud of</h2>
+            <p class="special-work-intro">&mdash;mainly because they didn&rsquo;t break and people kept using them.</p>
+            <ol class="special-work-list">
+              <li class="special-work-item">
+                <div class="special-work-copy">
+                  <p class="special-work-kicker">01 · GCP Infrastructure as Code</p>
+                  <h3>Built a reusable and self-service GCP infrastructure foundation</h3>
+                  <p>Designed and developed infrastructure using Terraform, with a focus on reusable modules and standardized configurations. Established a self-service setup where environments and resources can be provisioned, updated, and scaled with minimal friction.</p>
+                </div>
+              </li>
+              <li class="special-work-item">
+                <div class="special-work-copy">
+                  <p class="special-work-kicker">02 · Data Generator</p>
+                  <h3>Built a self-service tool for schema and data generation</h3>
+                  <p>Developed a user-facing tool that allows users to define schemas and generate structured test data on demand. Simplified data creation workflows by removing the need for manual setup or engineering involvement.</p>
+                </div>
+              </li>
+              <li class="special-work-item">
+                <div class="special-work-copy">
+                  <p class="special-work-kicker">03 · Placeholder Area</p>
+                  <h3>Placeholder: Improved trust in data quality</h3>
+                  <p>Placeholder text describing checks, guardrails, and confidence gains for analytics teams.</p>
+                </div>
+              </li>
+            </ol>
+          </article>
+
+          <article class="card bento-card certs-tile" id="certifications">
+            <p class="tile-head">Certifications</p>
+            <div class="cert-list">
+              <article class="cert-row">
+                <img class="cert-logo cert-logo-google" src="icons/gcp_cert_icon.jpeg" alt="Google Cloud logo" />
+                <div class="cert-copy">
+                  <h3>Google Cloud Big Data and Machine Learning Fundamentals</h3>
+                  <p class="cert-org">Google Cloud Skills Boost</p>
+                  <p class="cert-meta">Issued Feb 2026 &middot; Cred. ID H1DDDD8MLZFL</p>
+                  <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/H1DDDD8MLZFL" target="_blank" rel="noopener noreferrer" aria-label="Show credential for Google Cloud Big Data and Machine Learning Fundamentals">
+                    <span>Show credential</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10 14 19 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                      <path d="M19 13v5a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="cert-row">
+                <img class="cert-logo cert-logo-learn" src="icons/learnkarts_logo.jpeg" alt="LearnKartS logo" />
+                <div class="cert-copy">
+                  <h3>Database, Big Data, and DevOps Services in GCP</h3>
+                  <p class="cert-org">LearnKartS - Customized eLearning Content Provider</p>
+                  <p class="cert-meta">Issued Aug 2024 &middot; Cred. ID EZM6YX4YM3XH</p>
+                  <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/EZM6YX4YM3XH" target="_blank" rel="noopener noreferrer" aria-label="Show credential for Database, Big Data, and DevOps Services in GCP">
+                    <span>Show credential</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10 14 19 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                      <path d="M19 13v5a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="cert-row">
+                <img class="cert-logo cert-logo-ibm" src="logos/ibm_logo.jpeg" alt="IBM logo" />
+                <div class="cert-copy">
+                  <h3>ETL and Data Pipelines with Shell, Airflow and Kafka</h3>
+                  <p class="cert-org">IBM</p>
+                  <p class="cert-meta">Issued Oct 2023 &middot; Cred. ID ZX5PS79YV9FN</p>
+                  <a class="cert-link" href="https://www.coursera.org/account/accomplishments/certificate/ZX5PS79YV9FN" target="_blank" rel="noopener noreferrer" aria-label="Show credential for ETL and Data Pipelines with Shell, Airflow and Kafka">
+                    <span>Show credential</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M10 14 19 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                      <path d="M19 13v5a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <article class="cert-row cert-row-progress">
+                <img class="cert-logo cert-logo-google" src="icons/gcp_cert_icon.jpeg" alt="Google Cloud logo" />
+                <div class="cert-copy">
+                  <div class="cert-progress-head">
+                    <h3>Google Cloud Professional Data Engineer Certification</h3>
+                    <span class="cert-status">In Progress</span>
+                  </div>
+                  <p class="cert-org">Google Cloud</p>
+                  <p class="cert-meta">Targeting exam completion in 2026</p>
+                </div>
+              </article>
+            </div>
+          </article>
+
+          <article class="card bento-card contact-tile" id="contact">
+            <p class="tile-head">Contact</p>
+            <h2>Let's get in touch!</h2>
+            <p class="contact-intro">Want to grab a coffee and talk data? <br/> Here's how to reach me:</p>
+            <div class="contact-free-list">
+              <div class="contact-free-item">
+                <img class="contact-free-icon" src="icons/icons8-user-24.png" alt="" />
+                <span class="contact-free-value">Shadab Ahmed</span>
+              </div>
+
+              <div class="contact-free-item">
+                <img class="contact-free-icon" src="icons/icons8-home-48.png" alt="" />
+                <span class="contact-free-value">Stockholm, Sweden</span>
+              </div>
+
+              <div class="contact-free-item">
+                <img class="contact-free-icon" src="icons/icons8-phone-50.png" alt="" />
+                <span class="contact-free-value">+46 73 896 55 42</span>
+              </div>
+
+              <div class="contact-free-item">
+                <img class="contact-free-icon" src="icons/icons8-email-48.png" alt="" />
+                <a class="contact-free-value contact-free-link" href="mailto:shadab.ahmed@live.se">shadab.ahmed@live.se</a>
+              </div>
+
+              <div class="contact-free-item">
+                <img class="contact-free-icon" src="icons/icons8-linkedin-24.png" alt="" />
+                <a class="contact-free-value contact-free-link" href="https://www.linkedin.com/in/shadab-ahmed-929481183/" target="_blank" rel="noopener noreferrer">linkedin.com/in/shadab-ahmed-929481183</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card bento-card quick-stats-tile" id="quick-stats">
+            <p class="tile-head">What my brain is juggling</p>
+            <p class="quick-stats-note">A slightly chaotic mix of data brainwaves and real-life side quests.</p>
+            <div class="pill-cloud" aria-label="Current focus areas">
+              <span class="cloud-pill pill-1">Schema Contracts</span>
+              <span class="cloud-pill pill-2">Airflow DAGs</span>
+              <span class="cloud-pill pill-3">GCP Adventures</span>
+              <span class="cloud-pill pill-4">Futsal Nutmegs</span>
+              <span class="cloud-pill pill-5">Tech Conf FOMO</span>
+              <span class="cloud-pill pill-6">Chelsea Rollercoaster</span>
+              <span class="cloud-pill pill-7">Gym PR Delusion</span>
+              <span class="cloud-pill pill-8">Travel Buffer++</span>
+              <span class="cloud-pill pill-9">Coffee + Logs</span>
+              <span class="cloud-pill pill-10">Fantasy Premier League</span>
+            </div>
+          </article>
+
+          <article class="card bento-card download-tile">
+            <div class="download-copy">
+              <p class="tile-head">Download</p>
+              <h2>Get My CV as PDF</h2>
+              <p>Prefer an offline copy that is much easier to digest than this page?</p>
+            </div>
+            <a class="btn download-card-btn" href="cv/shadab_ahmed_cv.pdf" download="shadab_ahmed_cv.pdf" aria-label="Download CV as PDF">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="m8.8 10.9 3.2 3.3 3.2-3.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 19.5h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              Download PDF
+            </a>
+            <img class="download-brand-logo" src="icons/shadab.jpeg" alt="Shadab logo" />
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer-note">
+      <p>Last updated April 2026</p>
+    </footer>
+  </div>
+  <div class="soft-cursor" id="soft-cursor" aria-hidden="true"></div>
+</body>
+</html>
