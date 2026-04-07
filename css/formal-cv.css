@@ -226,6 +226,9 @@ a {
 .exp-entry {
   --exp-logo-size: 1.77rem;
   --exp-logo-gap: 0.5rem;
+  --exp-bullet-size: 0.2rem;
+  --exp-bullet-x: calc((var(--exp-logo-size) / 2) - (var(--exp-bullet-size) / 2));
+  --exp-bullet-text-gap: 0.52rem;
   padding-top: 0.62rem;
   margin-top: 0.62rem;
   border-top: 1px solid var(--line);
@@ -282,7 +285,6 @@ a {
 
 .exp-list {
   margin: 0.42rem 0 0;
-  margin-left: calc((var(--exp-logo-size) / 2) - 0.35rem);
   padding-left: 0;
   list-style: none;
   display: grid;
@@ -299,20 +301,21 @@ a {
 
 .exp-list li {
   position: relative;
-  padding-left: 0.78rem;
+  padding-left: calc(var(--exp-bullet-x) + var(--exp-bullet-size) + var(--exp-bullet-text-gap));
   font-size: 0.7rem;
   line-height: 1.38;
   color: #555555;
 }
 
 .exp-list li::before {
-  content: "\2022";
+  content: "";
   position: absolute;
-  left: 0;
-  top: 0.02rem;
-  color: #666666;
-  font-size: 0.74rem;
-  line-height: 1;
+  left: var(--exp-bullet-x);
+  top: calc(0.7em - (var(--exp-bullet-size) / 2));
+  width: var(--exp-bullet-size);
+  height: var(--exp-bullet-size);
+  border-radius: 999px;
+  background: #666666;
 }
 
 .cv-block > p,
