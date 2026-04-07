@@ -559,12 +559,12 @@ html[data-theme="light"] .download-brand-logo {
 }
 
 .contact-tile {
-  grid-column: 1 / span 5;
+  grid-column: 1 / span 4;
   grid-row: 2;
 }
 
 .quick-stats-tile {
-  grid-column: 6 / span 4;
+  grid-column: 5 / span 5;
   grid-row: 2;
   display: flex;
   flex-direction: column;
@@ -1450,7 +1450,7 @@ html[data-theme="light"] .contact-free-icon {
 .pill-3 { grid-column: 5 / span 2; grid-row: 1; --pill-rot: 14deg; --pill-x: 0.16rem; }
 .pill-4 { grid-column: 1 / span 2; grid-row: 2; --pill-rot: 18deg; --pill-x: 0.08rem; }
 .pill-5 { grid-column: 3 / span 2; grid-row: 2; --pill-rot: -8deg; --pill-x: -0.08rem; }
-.pill-7 { grid-column: 5 / span 2; grid-row: 3; --pill-rot: 8deg; --pill-x: -3rem; --pill-y: -0.12rem; }
+.pill-7 { grid-column: 5 / span 2; grid-row: 3; --pill-rot: 8deg; --pill-x: -4rem; --pill-y: -0.12rem; }
 .pill-6 { grid-column: 1 / span 3; grid-row: 3; --pill-rot: -7deg; --pill-x: -0.08rem; }
 .pill-9 { grid-column: 5 / span 2; grid-row: 2; --pill-rot: -5deg; --pill-x: 0.18rem; }
 .pill-8 { grid-column: 2 / span 2; grid-row: 4; --pill-rot: 7deg; --pill-y: -0.02rem; }
@@ -2121,7 +2121,7 @@ html[data-theme="light"] .tool-node.tool-mysql img {
   .brand-pill {
     grid-area: brand;
     justify-self: start;
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     letter-spacing: 0.11em;
   }
 
@@ -2130,10 +2130,10 @@ html[data-theme="light"] .tool-node.tool-mysql img {
     width: 100%;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 0.72rem;
-    overflow-x: auto;
+    gap: 0.8rem;
+    overflow: visible;
     scrollbar-width: none;
-    padding-bottom: 0.05rem;
+    padding-bottom: 0;
     padding-inline: 0;
   }
 
@@ -2143,7 +2143,12 @@ html[data-theme="light"] .tool-node.tool-mysql img {
 
   .nav-pill a {
     white-space: nowrap;
-    font-size: 0.74rem;
+    font-size: 0.73rem;
+  }
+
+  .nav-pill a[href="#skills"],
+  .nav-pill a[href="#highlights"] {
+    display: none;
   }
 
   .icon-btn.mobile-more-btn {
@@ -2151,20 +2156,38 @@ html[data-theme="light"] .tool-node.tool-mysql img {
     justify-self: end;
     display: inline-flex;
     color: var(--text);
-    width: 1.65rem;
-    height: 1.65rem;
-    border-radius: 0.5rem;
-    border: 1px solid transparent;
+    width: 1.12rem;
+    height: 1.12rem;
+    border-radius: 0;
+    border: 0;
     padding: 0;
+    margin: 0;
+    line-height: 0;
+    position: relative;
+    z-index: 1;
   }
 
-  .mobile-more-btn:hover {
-    border-color: var(--line);
+  .icon-btn.mobile-more-btn::before {
+    content: "";
+    position: absolute;
+    inset: -0.28rem;
+    border: 1px solid color-mix(in srgb, var(--line) 86%, transparent);
+    border-radius: 0.48rem;
+    background: color-mix(in srgb, var(--surface-soft) 78%, transparent);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 140ms ease;
+  }
+
+  .top-nav.menu-open .icon-btn.mobile-more-btn::before {
+    opacity: 1;
   }
 
   .mobile-more-btn svg {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.08rem;
+    height: 1.08rem;
+    position: relative;
+    z-index: 2;
   }
 
   .top-actions {
@@ -2549,7 +2572,7 @@ html[data-theme="light"] .tool-node.tool-mysql img {
   .pill-4 { --pill-rot: 16deg; --pill-x: 0.05rem; --pill-y: 0.02rem; }
   .pill-5 { --pill-rot: -7deg; --pill-x: -0.04rem; --pill-y: 0.01rem; }
   .pill-6 { --pill-rot: -7deg; --pill-x: -0.02rem; --pill-y: 0; }
-  .pill-7 { --pill-rot: 8deg; --pill-x: -0.62rem; --pill-y: -0.05rem; }
+  .pill-7 { --pill-rot: 8deg; --pill-x: -3rem; --pill-y: -0.05rem; }
   .pill-8 { --pill-rot: 7deg; --pill-x: 0.04rem; --pill-y: 0; }
   .pill-9 { --pill-rot: -5deg; --pill-x: 0.08rem; --pill-y: 0; }
   .pill-10 { --pill-rot: -8deg; --pill-x: 0.06rem; --pill-y: 0; }
