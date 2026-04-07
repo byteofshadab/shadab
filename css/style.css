@@ -932,6 +932,7 @@ html[data-theme="light"] .now-tile .pill-list span:nth-child(4n + 4) {
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  contain: paint;
   border-color: color-mix(in srgb, var(--line) 68%, rgba(122, 154, 255, 0.42));
   background:
     radial-gradient(38rem 24rem at 94% -8%, rgba(118, 143, 255, 0.24), transparent 68%),
@@ -2108,19 +2109,48 @@ html[data-theme="light"] .tool-node.tool-mysql img {
   }
 
   .top-nav {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 0.8rem;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "brand actions"
+      "nav nav";
+    align-items: center;
+    justify-items: stretch;
+    gap: 0.65rem;
     padding: 0.82rem 1rem;
   }
 
-  .nav-pill {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  .brand-pill {
+    grid-area: brand;
+    justify-self: start;
   }
 
-  .top-actions,
+  .nav-pill {
+    grid-area: nav;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.8rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-pill::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-pill a {
+    white-space: nowrap;
+    font-size: 0.74rem;
+  }
+
+  .top-actions {
+    grid-area: actions;
+    width: auto;
+    justify-self: end;
+    justify-content: flex-end;
+    gap: 0.72rem;
+  }
+
   .hero-cta-row {
     width: 100%;
     justify-content: center;
@@ -2337,6 +2367,12 @@ html[data-theme="light"] .tool-node.tool-mysql img {
     bottom: -4.3rem;
   }
 
+  .special-work-tile {
+    overflow: hidden;
+    clip-path: inset(0 round var(--radius-xl));
+    background-clip: padding-box;
+  }
+
   .special-work-list {
     gap: 0.56rem;
   }
@@ -2410,20 +2446,42 @@ html[data-theme="light"] .tool-node.tool-mysql img {
   }
 
   .pill-cloud {
-    min-height: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    flex: 0 0 auto;
-    gap: 0.4rem;
+    min-height: 11.7rem;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: minmax(1.88rem, auto);
+    align-items: center;
+    flex: 1 1 auto;
+    row-gap: 0.3rem;
+    column-gap: 0.16rem;
     padding: 0;
   }
 
   .cloud-pill {
-    position: static;
-    transform: none !important;
-    font-size: 0.62rem;
-    padding: 0.3rem 0.62rem;
+    position: relative;
+    transform: translate(var(--pill-x, 0), var(--pill-y, 0)) rotate(var(--pill-rot, 0deg)) !important;
+    font-size: 0.55rem;
+    min-height: 1.72rem;
+    padding: 0 0.48rem;
+  }
+
+  .pill-1 { --pill-rot: -8deg; --pill-x: -0.08rem; --pill-y: 0; }
+  .pill-2 { --pill-rot: -5deg; --pill-x: -0.02rem; --pill-y: 0.02rem; }
+  .pill-3 { --pill-rot: 13deg; --pill-x: 0.08rem; --pill-y: 0; }
+  .pill-4 { --pill-rot: 16deg; --pill-x: 0.05rem; --pill-y: 0.02rem; }
+  .pill-5 { --pill-rot: -7deg; --pill-x: -0.04rem; --pill-y: 0.01rem; }
+  .pill-6 { --pill-rot: -7deg; --pill-x: -0.02rem; --pill-y: 0; }
+  .pill-7 { --pill-rot: 8deg; --pill-x: -0.62rem; --pill-y: -0.05rem; }
+  .pill-8 { --pill-rot: 7deg; --pill-x: 0.04rem; --pill-y: 0; }
+  .pill-9 { --pill-rot: -5deg; --pill-x: 0.08rem; --pill-y: 0; }
+  .pill-10 { --pill-rot: -8deg; --pill-x: 0.06rem; --pill-y: 0; }
+
+  .download-tile {
+    padding-bottom: 5.2rem;
+  }
+
+  .download-brand-logo {
+    bottom: -0.45rem;
   }
 
   .download-card-btn {

@@ -88,7 +88,7 @@ a {
 }
 
 .cv-columns {
-  margin-top: 1.3rem;
+  margin-top: 1.68rem;
   display: grid;
   grid-template-columns: minmax(0, 43fr) minmax(0, 57fr);
   gap: 1.5rem;
@@ -125,6 +125,12 @@ a {
   font-size: 0.72rem;
   line-height: 1.55;
   color: #575757;
+}
+
+.cv-indent {
+  display: block;
+  margin-top: 0.1rem;
+  text-indent: 1rem;
 }
 
 .detail-list,
@@ -291,6 +297,14 @@ a {
   font-size: 0.7rem;
   line-height: 1.38;
   color: #555555;
+}
+
+.cv-block > p,
+.exp-list li,
+.cert-meta,
+.edu-entry p:not(.edu-date) {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .edu-entry {
