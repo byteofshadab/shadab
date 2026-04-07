@@ -224,6 +224,8 @@ a {
 }
 
 .exp-entry {
+  --exp-logo-size: 1.77rem;
+  --exp-logo-gap: 0.5rem;
   padding-top: 0.62rem;
   margin-top: 0.62rem;
   border-top: 1px solid var(--line);
@@ -280,6 +282,7 @@ a {
 
 .exp-list {
   margin: 0.42rem 0 0;
+  margin-left: calc((var(--exp-logo-size) / 2) - 0.35rem);
   padding-left: 0.8rem;
   display: grid;
   gap: 0.22rem;
