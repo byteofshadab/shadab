@@ -2,7 +2,10 @@
   const themeStorageKey = "cv-theme";
   const htmlElement = document.documentElement;
   const themeButton = document.getElementById("theme-toggle");
+  const themeToggleLabel = document.getElementById("theme-toggle-label");
   const siteNav = document.getElementById("site-nav");
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  const mobileActionsMenu = document.getElementById("mobile-actions-menu");
   const brandLink = document.querySelector(".brand-pill");
   const navSectionLinks = document.querySelectorAll('.nav-pill a[href^="#"]');
   const softCursor = document.getElementById("soft-cursor");
@@ -134,10 +137,14 @@
     htmlElement.setAttribute("data-theme", normalizedTheme);
 
     if (themeButton) {
-      const nextLabel = normalizedTheme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+      const nextLabel = normalizedTheme === "dark" ? "Switch to Day" : "Switch to Night";
       themeButton.setAttribute("aria-pressed", String(normalizedTheme === "light"));
       themeButton.setAttribute("aria-label", nextLabel);
       themeButton.setAttribute("title", nextLabel);
+    }
+
+    if (themeToggleLabel) {
+      themeToggleLabel.textContent = normalizedTheme === "dark" ? "Switch to Day" : "Switch to Night";
     }
 
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
@@ -173,6 +180,36 @@
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const scrollBehavior = prefersReducedMotion.matches ? "auto" : "smooth";
+  const mobileNavBreakpoint = 760;
+
+  const setMobileMenuOpen = (open) => {
+    if (!siteNav || !mobileMenuToggle) return;
+    siteNav.classList.toggle("menu-open", open);
+    mobileMenuToggle.setAttribute("aria-expanded", String(open));
+  };
+
+  const isMobileViewport = () => window.matchMedia(`(max-width: ${mobileNavBreakpoint}px)`).matches;
+
+  if (mobileMenuToggle && siteNav && mobileActionsMenu) {
+    mobileMenuToggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const nextOpen = !siteNav.classList.contains("menu-open");
+      setMobileMenuOpen(nextOpen);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!siteNav.classList.contains("menu-open")) return;
+      if (!siteNav.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && siteNav.classList.contains("menu-open")) {
+        setMobileMenuOpen(false);
+      }
+    });
+  }
 
   navSectionLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -187,6 +224,10 @@
       if (history.pushState) {
         history.pushState(null, "", targetId);
       }
+
+      if (isMobileViewport()) {
+        setMobileMenuOpen(false);
+      }
     });
   });
 
@@ -197,6 +238,18 @@
 
       if (history.replaceState) {
         history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+
+      if (isMobileViewport()) {
+        setMobileMenuOpen(false);
+      }
+    });
+  }
+
+  if (themeButton) {
+    themeButton.addEventListener("click", () => {
+      if (isMobileViewport()) {
+        setMobileMenuOpen(false);
       }
     });
   }
@@ -259,7 +312,13 @@
 
   updateSectionOffset();
   updateNavState();
+  setMobileMenuOpen(false);
   initSoftCursor();
   window.addEventListener("scroll", updateNavState, { passive: true });
-  window.addEventListener("resize", updateSectionOffset, { passive: true });
+  window.addEventListener("resize", () => {
+    updateSectionOffset();
+    if (!isMobileViewport()) {
+      setMobileMenuOpen(false);
+    }
+  }, { passive: true });
 })();

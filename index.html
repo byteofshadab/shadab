@@ -29,9 +29,18 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="top-actions">
+      <button class="icon-btn mobile-more-btn" id="mobile-menu-toggle" type="button" aria-label="Open quick actions" aria-expanded="false" aria-controls="mobile-actions-menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="5.5" r="1.9" fill="currentColor"></circle>
+          <circle cx="12" cy="12" r="1.9" fill="currentColor"></circle>
+          <circle cx="12" cy="18.5" r="1.9" fill="currentColor"></circle>
+        </svg>
+      </button>
+
+      <div class="top-actions" id="mobile-actions-menu">
         <a class="icon-btn download-icon-btn" href="cv/shadab_ahmed_cv.pdf" download="shadab_ahmed_cv.pdf" aria-label="Download CV PDF" title="Download CV PDF" data-tooltip="Download CV">
           <img class="download-nav-icon" src="icons/icons8-pdf-64.png" alt="" />
+          <span class="action-label">Download CV</span>
         </a>
 
         <button class="icon-btn theme-icon-btn" id="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme" title="Toggle theme">
@@ -42,6 +51,7 @@
           <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M20.1 14.5A8.6 8.6 0 0 1 9.5 3.9a8.7 8.7 0 1 0 10.6 10.6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
           </svg>
+          <span class="action-label" id="theme-toggle-label">Switch to Day</span>
         </button>
       </div>
     </header>

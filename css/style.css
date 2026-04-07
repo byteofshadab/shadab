@@ -177,6 +177,10 @@ body.soft-cursor-enabled * {
   gap: 0.92rem;
 }
 
+.action-label {
+  display: none;
+}
+
 .icon-btn {
   width: auto;
   height: auto;
@@ -189,6 +193,10 @@ body.soft-cursor-enabled * {
   justify-content: center;
   cursor: pointer;
   transition: color 180ms ease;
+}
+
+.icon-btn.mobile-more-btn {
+  display: none;
 }
 
 .icon-btn:hover {
@@ -1936,16 +1944,6 @@ html[data-theme="light"] .tool-node.tool-mysql img {
     padding-top: 7.2rem;
   }
 
-  .top-nav {
-    grid-template-columns: auto 1fr;
-    row-gap: 0.7rem;
-  }
-
-  .top-actions {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
-
   .bento-grid {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
@@ -2105,23 +2103,24 @@ html[data-theme="light"] .tool-node.tool-mysql img {
 @media (max-width: 760px) {
   .page-shell {
     width: calc(100% - 1.3rem);
-    padding-top: 10.6rem;
+    padding-top: 7.2rem;
   }
 
   .top-nav {
-    grid-template-columns: auto auto;
-    grid-template-areas:
-      "brand actions"
-      "nav nav";
+    position: fixed;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "brand nav more";
     align-items: center;
     justify-items: stretch;
-    gap: 0.65rem;
+    gap: 0.55rem;
     padding: 0.82rem 1rem;
   }
 
   .brand-pill {
     grid-area: brand;
     justify-self: start;
+    font-size: 0.68rem;
+    letter-spacing: 0.11em;
   }
 
   .nav-pill {
@@ -2129,9 +2128,11 @@ html[data-theme="light"] .tool-node.tool-mysql img {
     width: 100%;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 0.72rem;
     overflow-x: auto;
     scrollbar-width: none;
+    padding-bottom: 0.05rem;
+    padding-inline: 0;
   }
 
   .nav-pill::-webkit-scrollbar {
@@ -2143,12 +2144,87 @@ html[data-theme="light"] .tool-node.tool-mysql img {
     font-size: 0.74rem;
   }
 
-  .top-actions {
-    grid-area: actions;
-    width: auto;
+  .icon-btn.mobile-more-btn {
+    grid-area: more;
     justify-self: end;
-    justify-content: flex-end;
-    gap: 0.72rem;
+    display: inline-flex;
+    color: var(--text);
+    width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    padding: 0;
+  }
+
+  .mobile-more-btn:hover {
+    border-color: var(--line);
+  }
+
+  .mobile-more-btn svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .top-actions {
+    position: absolute;
+    top: calc(100% + 0.3rem);
+    right: 0.95rem;
+    z-index: 120;
+    display: none;
+    min-width: 12rem;
+    padding: 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.2rem;
+  }
+
+  .top-nav.menu-open .top-actions {
+    display: flex;
+  }
+
+  .top-actions .icon-btn {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.05rem minmax(0, 1fr);
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 0.6rem;
+    color: var(--text);
+    border: 1px solid transparent;
+    border-radius: 0.64rem;
+    padding: 0.45rem 0.5rem;
+  }
+
+  .top-actions .icon-btn:hover {
+    border-color: var(--line);
+    background: color-mix(in srgb, var(--surface-soft) 82%, transparent);
+  }
+
+  .top-actions .action-label {
+    display: inline;
+    font-size: 0.72rem;
+    line-height: 1;
+    color: var(--text);
+    justify-self: start;
+    text-align: left;
+  }
+
+  .top-actions .icon-btn img,
+  .top-actions .icon-btn svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    max-width: 1.05rem;
+    max-height: 1.05rem;
+  }
+
+  .download-icon-btn::after {
+    display: none;
   }
 
   .hero-cta-row {
@@ -2477,11 +2553,17 @@ html[data-theme="light"] .tool-node.tool-mysql img {
   .pill-10 { --pill-rot: -8deg; --pill-x: 0.06rem; --pill-y: 0; }
 
   .download-tile {
-    padding-bottom: 5.2rem;
+    gap: 1.25rem;
+    padding-bottom: 5.7rem;
+    overflow: hidden;
+  }
+
+  .download-copy {
+    margin-bottom: 0.5rem;
   }
 
   .download-brand-logo {
-    bottom: -0.45rem;
+    bottom: 0.15rem;
   }
 
   .download-card-btn {
