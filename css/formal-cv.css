@@ -283,7 +283,8 @@ a {
 .exp-list {
   margin: 0.42rem 0 0;
   margin-left: calc((var(--exp-logo-size) / 2) - 0.35rem);
-  padding-left: 0.8rem;
+  padding-left: 0;
+  list-style: none;
   display: grid;
   gap: 0.22rem;
 }
@@ -297,9 +298,21 @@ a {
 }
 
 .exp-list li {
+  position: relative;
+  padding-left: 0.78rem;
   font-size: 0.7rem;
   line-height: 1.38;
   color: #555555;
+}
+
+.exp-list li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 0.02rem;
+  color: #666666;
+  font-size: 0.74rem;
+  line-height: 1;
 }
 
 .cv-block > p,
