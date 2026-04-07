@@ -349,10 +349,12 @@ html[data-theme="light"] .theme-icon-btn .icon-moon {
 
 .intro-text {
   margin: 0.62rem 0 0;
-  max-width: 62ch;
+  max-width: 48ch;
   color: var(--muted);
   line-height: 1.5;
   font-size: 0.8rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .intro-text + .intro-text {
