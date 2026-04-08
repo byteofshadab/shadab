@@ -1687,7 +1687,15 @@ html[data-theme="light"] .tool-node.tool-mysql img {
   --icon-scale: 1.02;
 }
 
+.tool-node.tool-cloudcomposer {
+  --icon-scale: 1.03;
+}
+
 .tool-node.tool-iam {
+  --icon-scale: 1.02;
+}
+
+.tool-node.tool-openshift {
   --icon-scale: 1.02;
 }
 
