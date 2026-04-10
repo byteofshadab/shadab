@@ -9,127 +9,6 @@
   const brandLink = document.querySelector(".brand-pill");
   const navSectionLinks = document.querySelectorAll('.nav-pill a[href^="#"]');
   const softCursor = document.getElementById("soft-cursor");
-  const downloadBrandLogo = document.querySelector(".download-brand-logo");
-  const lightCutoutVersion = "3";
-  let lightLogoCutoutPromise = null;
-
-  const createLightLogoCutout = (imgSrc) =>
-    new Promise((resolve) => {
-      const source = new Image();
-      source.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = source.naturalWidth || source.width;
-        canvas.height = source.naturalHeight || source.height;
-        const ctx = canvas.getContext("2d");
-
-        if (!ctx || !canvas.width || !canvas.height) {
-          resolve(null);
-          return;
-        }
-
-        ctx.drawImage(source, 0, 0);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-        const width = canvas.width;
-        const height = canvas.height;
-        const visited = new Uint8Array(width * height);
-        const stack = [];
-
-        const isBackgroundLike = (r, g, b) => {
-          const max = Math.max(r, g, b);
-          const min = Math.min(r, g, b);
-          return max <= 14 && max - min <= 5;
-        };
-
-        const pushIfBackground = (x, y) => {
-          if (x < 0 || y < 0 || x >= width || y >= height) return;
-          const flatIndex = y * width + x;
-          if (visited[flatIndex]) return;
-
-          const pixelIndex = flatIndex * 4;
-          const r = data[pixelIndex];
-          const g = data[pixelIndex + 1];
-          const b = data[pixelIndex + 2];
-
-          if (!isBackgroundLike(r, g, b)) return;
-          visited[flatIndex] = 1;
-          stack.push(flatIndex);
-        };
-
-        for (let x = 0; x < width; x += 1) {
-          pushIfBackground(x, 0);
-          pushIfBackground(x, height - 1);
-        }
-
-        for (let y = 0; y < height; y += 1) {
-          pushIfBackground(0, y);
-          pushIfBackground(width - 1, y);
-        }
-
-        while (stack.length) {
-          const flatIndex = stack.pop();
-          const x = flatIndex % width;
-          const y = Math.floor(flatIndex / width);
-          pushIfBackground(x + 1, y);
-          pushIfBackground(x - 1, y);
-          pushIfBackground(x, y + 1);
-          pushIfBackground(x, y - 1);
-        }
-
-        for (let flatIndex = 0; flatIndex < visited.length; flatIndex += 1) {
-          if (!visited[flatIndex]) continue;
-          data[flatIndex * 4 + 3] = 0;
-        }
-
-        ctx.putImageData(imageData, 0, 0);
-        resolve(canvas.toDataURL("image/png"));
-      };
-
-      source.onerror = () => resolve(null);
-      source.src = imgSrc;
-    });
-
-  const updateDownloadLogoForTheme = (theme) => {
-    if (!downloadBrandLogo) return;
-
-    if (!downloadBrandLogo.dataset.originalSrc) {
-      const originalSrc = downloadBrandLogo.getAttribute("src");
-      if (originalSrc) {
-        downloadBrandLogo.dataset.originalSrc = originalSrc;
-      }
-    }
-
-    const originalSrc = downloadBrandLogo.dataset.originalSrc;
-    if (!originalSrc) return;
-
-    if (theme !== "light") {
-      if (downloadBrandLogo.getAttribute("src") !== originalSrc) {
-        downloadBrandLogo.setAttribute("src", originalSrc);
-      }
-      return;
-    }
-
-    if (
-      downloadBrandLogo.dataset.lightCutoutSrc &&
-      downloadBrandLogo.dataset.lightCutoutVersion === lightCutoutVersion
-    ) {
-      downloadBrandLogo.setAttribute("src", downloadBrandLogo.dataset.lightCutoutSrc);
-      return;
-    }
-
-    if (!lightLogoCutoutPromise) {
-      lightLogoCutoutPromise = createLightLogoCutout(originalSrc);
-    }
-
-    lightLogoCutoutPromise.then((cutoutSrc) => {
-      if (!cutoutSrc) return;
-      downloadBrandLogo.dataset.lightCutoutSrc = cutoutSrc;
-      downloadBrandLogo.dataset.lightCutoutVersion = lightCutoutVersion;
-      if (htmlElement.getAttribute("data-theme") === "light") {
-        downloadBrandLogo.setAttribute("src", cutoutSrc);
-      }
-    });
-  };
 
   const applyTheme = (theme) => {
     const normalizedTheme = theme === "light" ? "light" : "dark";
@@ -152,7 +31,6 @@
       metaThemeColor.setAttribute("content", normalizedTheme === "dark" ? "#07090d" : "#f1f4f8");
     }
 
-    updateDownloadLogoForTheme(normalizedTheme);
   };
 
   const savedTheme = localStorage.getItem(themeStorageKey);

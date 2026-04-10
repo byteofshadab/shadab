@@ -443,25 +443,26 @@ html[data-theme="light"] .theme-icon-btn .icon-moon {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 4.4rem;
-  height: 4.4rem;
-  transform: translateX(-50%);
+  width: 4.5rem;
+  height: 4.5rem;
+  transform: translateX(-50%) translateZ(0);
   object-fit: contain;
   border-radius: 0;
   border: 0;
   background: transparent;
   pointer-events: none;
   mix-blend-mode: normal;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 html[data-theme="dark"] .download-brand-logo {
-  mix-blend-mode: lighten;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.26));
 }
 
 html[data-theme="light"] .download-brand-logo {
-  mix-blend-mode: normal;
-  filter: drop-shadow(0 2px 5px rgba(68, 84, 108, 0.16));
+  filter: contrast(1.03) saturate(1.04);
 }
 
 .skills-tile {
