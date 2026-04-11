@@ -588,7 +588,7 @@ html[data-theme="light"] .download-brand-logo {
 .bento-card h2 {
   margin: 1rem 0 0;
   color: var(--heading);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 1.5rem;
   line-height: 1.36;
   font-weight: 600;
 }
@@ -596,6 +596,11 @@ html[data-theme="light"] .download-brand-logo {
 .about-gradient-title {
   display: inline-block;
   color: var(--heading);
+}
+
+.about-tile h2.about-gradient-title {
+  font-size: clamp(1.02rem, 1.55vw, 1.24rem);
+  line-height: 1.32;
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -621,6 +626,10 @@ html[data-theme="light"] .download-brand-logo {
   color: var(--muted);
   line-height: 1.78;
   font-size: 0.92rem;
+}
+
+.about-tile > p:not(.tile-head) {
+  font-size: 0.85rem;
 }
 
 .compact-list {
