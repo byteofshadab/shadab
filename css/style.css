@@ -630,8 +630,6 @@ html[data-theme="light"] .download-brand-logo {
 
 .about-tile > p:not(.tile-head) {
   font-size: 0.85rem;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 .compact-list {
