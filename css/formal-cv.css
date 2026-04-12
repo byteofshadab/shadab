@@ -41,13 +41,14 @@ a {
 .cv-top {
   display: grid;
   grid-template-columns: 12.6rem 1fr;
-  gap: 1.4rem;
+  gap: 1.28rem;
   align-items: center;
 }
 
 .cv-photo {
   margin: 0;
-  width: 96%;
+  width: 93%;
+  justify-self: start;
   aspect-ratio: 200 / 185;
   overflow: hidden;
   border-radius: 10px;
