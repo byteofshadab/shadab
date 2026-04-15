@@ -14,7 +14,6 @@
   --radius-lg: 16px;
   --radius-md: 12px;
   --font-main: "Inter", "Segoe UI", sans-serif;
-  --theme-fade-layer: #0f1012;
 }
 
 html[data-theme="light"] {
@@ -56,30 +55,6 @@ body {
   color: var(--text);
   font-family: var(--font-main);
   font-weight: 400;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: var(--theme-fade-layer);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 190;
-}
-
-body.theme-switching::after {
-  animation: theme-switch-fade 220ms ease-out;
-}
-
-@keyframes theme-switch-fade {
-  from {
-    opacity: 0.34;
-  }
-
-  to {
-    opacity: 0;
-  }
 }
 
 a {
@@ -289,35 +264,22 @@ html[data-theme="light"] .download-nav-icon {
 .theme-icon-btn .icon-moon {
   width: 1rem;
   height: 1rem;
-  grid-column: 1;
-  grid-row: 1;
-  transition: opacity 170ms ease, transform 220ms cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.theme-icon-btn {
-  display: inline-grid;
-  place-items: center;
-  position: relative;
 }
 
 html[data-theme="dark"] .theme-icon-btn .icon-sun {
-  opacity: 1;
-  transform: translateX(0) scale(1);
+  display: block;
 }
 
 html[data-theme="dark"] .theme-icon-btn .icon-moon {
-  opacity: 0;
-  transform: translateX(44%) scale(0.78);
+  display: none;
 }
 
 html[data-theme="light"] .theme-icon-btn .icon-sun {
-  opacity: 0;
-  transform: translateX(-44%) scale(0.78);
+  display: none;
 }
 
 html[data-theme="light"] .theme-icon-btn .icon-moon {
-  opacity: 1;
-  transform: translateX(0) scale(1);
+  display: block;
 }
 
 .bento-main {
@@ -2304,18 +2266,6 @@ html[data-theme="light"] .tool-node.tool-mysql img {
     max-height: 1.05rem;
   }
 
-  .top-actions .theme-icon-btn .icon-sun,
-  .top-actions .theme-icon-btn .icon-moon {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-  }
-
-  .top-actions .theme-icon-btn .action-label {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
   .download-icon-btn::after {
     display: none;
   }
@@ -2672,17 +2622,6 @@ html[data-theme="light"] .tool-node.tool-mysql img {
 
   .download-card-btn {
     justify-content: center;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.theme-switching::after {
-    animation: none;
-  }
-
-  .theme-icon-btn .icon-sun,
-  .theme-icon-btn .icon-moon {
-    transition: none;
   }
 }
 

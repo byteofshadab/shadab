@@ -9,30 +9,6 @@
   const brandLink = document.querySelector(".brand-pill");
   const navSectionLinks = document.querySelectorAll('.nav-pill a[href^="#"]');
   const softCursor = document.getElementById("soft-cursor");
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const scrollBehavior = prefersReducedMotion.matches ? "auto" : "smooth";
-  let themeSwitchTimeoutId = null;
-
-  const triggerThemeSwitchFade = (previousBackgroundColor) => {
-    if (prefersReducedMotion.matches || !document.body) return;
-
-    if (previousBackgroundColor) {
-      htmlElement.style.setProperty("--theme-fade-layer", previousBackgroundColor);
-    }
-
-    document.body.classList.remove("theme-switching");
-    // Restart animation when users toggle quickly.
-    void document.body.offsetWidth;
-    document.body.classList.add("theme-switching");
-
-    if (themeSwitchTimeoutId) {
-      window.clearTimeout(themeSwitchTimeoutId);
-    }
-
-    themeSwitchTimeoutId = window.setTimeout(() => {
-      document.body.classList.remove("theme-switching");
-    }, 240);
-  };
 
   const applyTheme = (theme) => {
     const normalizedTheme = theme === "light" ? "light" : "dark";
@@ -60,6 +36,15 @@
   const savedTheme = localStorage.getItem(themeStorageKey);
   applyTheme(savedTheme || "dark");
 
+  if (themeButton) {
+    themeButton.addEventListener("click", () => {
+      const activeTheme = htmlElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+      const nextTheme = activeTheme === "dark" ? "light" : "dark";
+      localStorage.setItem(themeStorageKey, nextTheme);
+      applyTheme(nextTheme);
+    });
+  }
+
   const updateNavState = () => {
     if (!siteNav) return;
     siteNav.classList.toggle("scrolled", window.scrollY > 8);
@@ -71,18 +56,9 @@
     htmlElement.style.setProperty("--section-scroll-offset", `${Math.round(navHeight + peekGap)}px`);
   };
 
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const scrollBehavior = prefersReducedMotion.matches ? "auto" : "smooth";
   const mobileNavBreakpoint = 760;
-
-  if (themeButton) {
-    themeButton.addEventListener("click", () => {
-      const activeTheme = htmlElement.getAttribute("data-theme") === "light" ? "light" : "dark";
-      const nextTheme = activeTheme === "dark" ? "light" : "dark";
-      const previousBackgroundColor = window.getComputedStyle(document.body).backgroundColor;
-      localStorage.setItem(themeStorageKey, nextTheme);
-      applyTheme(nextTheme);
-      triggerThemeSwitchFade(previousBackgroundColor);
-    });
-  }
 
   const setMobileMenuOpen = (open) => {
     if (!siteNav || !mobileMenuToggle) return;
