@@ -1559,6 +1559,10 @@ html[data-theme="light"] .cloud-pill {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+.skills-card-languages .group-icons {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .tool-node {
   --icon-scale: 1;
   display: inline-flex;
@@ -1602,6 +1606,10 @@ html[data-theme="light"] .tool-node.tool-hadoop img {
 
 html[data-theme="light"] .tool-node.tool-mysql img {
   filter: saturate(165%) contrast(122%) brightness(0.94);
+}
+
+html[data-theme="dark"] .tool-node.tool-helm img {
+  filter: brightness(0) saturate(100%) invert(78%) sepia(43%) saturate(1729%) hue-rotate(167deg) brightness(108%) contrast(102%) drop-shadow(0 0 1px rgba(124, 214, 255, 0.62));
 }
 
 .tool-node.tool-python {
@@ -1707,6 +1715,14 @@ html[data-theme="light"] .tool-node.tool-mysql img {
 
 .tool-node.tool-openshift {
   --icon-scale: 1.02;
+}
+
+.tool-node.tool-shell {
+  --icon-scale: 1;
+}
+
+.tool-node.tool-helm {
+  --icon-scale: 1;
 }
 
 .timeline-item {
