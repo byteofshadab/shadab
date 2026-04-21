@@ -89,7 +89,7 @@ a {
 }
 
 .cv-columns {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   display: grid;
   grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
   gap: 1.5rem;
