@@ -41,13 +41,13 @@ a {
 .cv-top {
   display: grid;
   grid-template-columns: 12.6rem 1fr;
-  gap: 1.28rem;
+  gap: 1rem;
   align-items: center;
 }
 
 .cv-photo {
   margin: 0;
-  width: 90%;
+  width: 88%;
   justify-self: start;
   aspect-ratio: 200 / 185;
   overflow: hidden;
@@ -129,7 +129,7 @@ a {
 }
 
 .cv-profile-block p {
-  line-height: 1.5;
+  line-height: 1.47;
 }
 
 .cv-indent {
