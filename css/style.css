@@ -474,7 +474,7 @@ html[data-theme="light"] .download-brand-logo {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .experience-tile {
@@ -537,8 +537,9 @@ html[data-theme="light"] .download-brand-logo {
 .now-roadmap-rail {
   grid-column: span 5;
   display: grid;
+  grid-template-rows: auto 1fr;
   gap: 1rem;
-  align-content: start;
+  align-content: stretch;
 }
 
 .now-roadmap-rail > .now-tile,
@@ -1793,7 +1794,7 @@ html[data-theme="dark"] .tool-node.tool-helm img {
 }
 
 .experience-company-head p {
-  margin: 0;
+  margin: 0.18rem 0 0;
   color: var(--muted);
   font-size: 0.72rem;
   line-height: 1.16;
@@ -1804,11 +1805,16 @@ html[data-theme="dark"] .tool-node.tool-helm img {
   border-bottom: 0;
 }
 
+.experience-row + .experience-seb-block {
+  padding-top: 0.86rem;
+  border-top: 1px solid var(--line);
+}
+
 .experience-role-stack {
   margin-top: 0.72rem;
   margin-left: calc(var(--exp-logo-size) + var(--exp-head-gap));
   display: grid;
-  gap: 2rem;
+  gap: 1.75rem;
   position: relative;
 }
 
@@ -1881,6 +1887,11 @@ html[data-theme="dark"] .tool-node.tool-helm img {
   align-items: start;
   padding-top: 0.86rem;
   border-top: 1px solid var(--line);
+}
+
+.experience-row:first-child {
+  padding-top: 0;
+  border-top: 0;
 }
 
 .experience-row-content h3 {
