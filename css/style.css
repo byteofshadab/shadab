@@ -1641,6 +1641,10 @@ html[data-theme="dark"] .tool-node.tool-helm img {
   --icon-scale: 1.04;
 }
 
+html[data-theme="dark"] .tool-node.tool-spark img {
+  content: url("../icons/spark-dark.png");
+}
+
 .tool-node.tool-pyspark img {
   width: 1.76rem;
 }
