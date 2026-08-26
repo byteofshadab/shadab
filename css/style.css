@@ -1645,6 +1645,10 @@ html[data-theme="dark"] .tool-node.tool-helm img {
   width: 1.76rem;
 }
 
+html[data-theme="dark"] .tool-node.tool-pyspark img {
+  content: url("../icons/pyspark-dark.png");
+}
+
 .tool-node.tool-hazelcast {
   --icon-scale: 1;
 }
